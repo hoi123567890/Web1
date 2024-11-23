@@ -1,0 +1,14 @@
+body {
+    
+    background-color: black;
+    font-family: 'Segoe UI';
+
+}
+h1 {
+    color: whitesmoke;
+    size: 3em;
+    text-align: center;
+}
+    p{
+    color:darkgreen;
+}
