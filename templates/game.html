@@ -2,20 +2,32 @@
     <html>
         <head>
             <title>{{title}}</title>
+            <style>
+                p{
+                    size: 0.3em;
+                }
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            </style>
         </head>
         <body>
             {% include 'header.html' %}
             <div class="border-bottom" sytle="margin-bottom: 16px;">
                 <a href="#"></a>
-                {% for g in games %} 
-                    <h4> {{g['name']}}</h4>
-                    {% if 'rating' in g %}
-                    <div>
-                        <p>{{g['rating']}}/10</p>
-                    </div>
-                    {% endif %}
-                     <h6>Summary</h6>
-                    <p>{{g['summary']}}</p>
+                {% for g in games %}
+                <a href="{{ url_for('show_game', id=g['id']) }}">
+                        <h3> {{g['name']}}</h3>
+                        {% if 'rating' in g %}
+                        <div>
+                            <p>{{g['rating']}}/10</p>
+                        </div>
+                        {% endif %}
+                         <h4>Summary</h4>
+                        <p>{{g['summary']}}</p>
+                    </a>
+                    
                 {% endfor%}
             </div>
         </body>

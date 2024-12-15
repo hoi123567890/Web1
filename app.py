@@ -31,9 +31,10 @@ def login_route():
         veri= pass_veri(email,password)
         if veri == False:
             flash('Invalid password.', 'error')
+            return render_template("password.html")  
         else:
             session['username'] = veri
-            return redirect("/")    
+            return redirect("/")
     else:
         return render_template("password.html") 
 
@@ -53,14 +54,14 @@ def register_route():
            if con_password == password:
                veri = register(email, password, last_name, first_name, username)
                if veri is True:
-                    flash('Registration successful!', 'success') 
-                    time.sleep(5)
+                    flash('Registration successful!', 'success')
                     return redirect(url_for('home'))
                else:
                     flash('Choose another username.', 'error')
+                    return render_template("register.html") 
            else:
                 flash('Passwords do not match.', 'error')
-                time.sleep(5)
+                return render_template("register.html") 
         else:
             return redirect(url_for('login_route', email=email))
     else:
