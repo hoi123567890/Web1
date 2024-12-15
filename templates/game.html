@@ -16,7 +16,7 @@
             {% include 'header.html' %}
             <div class="border-bottom" sytle="margin-bottom: 16px;">
                 <a href="#"></a>
-                {% for g in games %}
+                {% for g in g %}
                     <a href="{{ url_for('show_game', id=g['id']) }}">
                         <h3> {{g['name']}}</h3>
                          <h4>Summary</h4>

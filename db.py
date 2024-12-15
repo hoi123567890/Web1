@@ -19,9 +19,13 @@ def load_games_from_db():
     return indi_game
 
 def load_movie_from_db():
+    print(1)
     db = GetDB()
+    print(2)
     indi_movie = db.execute("SELECT * FROM media WHERE game=0").fetchall()
+    print(3)
     db.close()
+    print(4)
     return indi_movie
 
 def load_media_from_db(id):

@@ -1,0 +1,32 @@
+{
+    "name": "Games and Moives",
+    "short_name": "G&M",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1abc9c",
+    "theme_color": "#fdfdfd",
+    "orientation": "landscape-primary",
+    "icons": [
+    {
+        "src": "image/logo.png",
+        "type": "image/png",
+        "sizes": "128x128",
+        "purpose": "maskable"
+    }
+    ],
+"screenshots" : [
+    {
+    "src": "icons/desktop_screenshot.png",
+    "sizes": "1920x1080",
+    "type": "image/png",
+    "label": ""
+    },
+    {
+    "src": "icons/mobile_screenshot.png",
+    "sizes": "1080x1920",
+    "type": "image/png",
+    "form_factor": "wide",
+    "label": ""
+    }
+    ]
+}

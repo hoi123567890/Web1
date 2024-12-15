@@ -1,18 +1,14 @@
-  <nav class="navbar shadow-sm fixed-top bg-body-black">
-    <div style="margin-left:5%;">
-      <div style="display: flex;" class="container-fluid">
-        <a class="navbar-brand" href="{{url_for('home')}}">
-          <img src="/static/images/logo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
-          Games and Movies
-        </a>
-        <div style="float: right;">
-          <a href="{{url_for('login_route')}}">
-            <p>
-              Sign in/up
-            </p>
-          </a>
-        </div>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('home') }}">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
+      Games and Movies
+    </a>
+    <div style="text-align: right;">
+      <a class="nav-link" href="{{ url_for('email_route') }}">
+        Sign in/up
+      </a>
     </div>
-  </nav>
-  <div style="height: 100px"></div>
+  </div>
+</nav>
+<div style="height: 10%;"></div>

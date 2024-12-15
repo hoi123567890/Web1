@@ -1,13 +1,18 @@
 from flask import Flask, flash, render_template, request, session, redirect, url_for
 import time
 from db import *
-
+x=0
 app = Flask(__name__)
 app.secret_key = "y_u_looking"
 
 @app.route('/')
 def home():
     return render_template("index.html")
+
+@app.route("/add", methods=["GET","POST"])
+def Add():
+    if session.get('username') == None:
+        return redirect("/")
 
 @app.route('/email', methods=['GET', 'POST'])
 def email_route():
@@ -33,11 +38,10 @@ def login_route():
             flash('Invalid password.', 'error')
             return render_template("password.html")  
         else:
-            session['username'] = veri
+            x = veri
             return redirect("/")
     else:
         return render_template("password.html") 
-
 @app.route('/register', methods=['GET', 'POST'])
 def register_route():
     email = request.args.get('email')
@@ -70,7 +74,7 @@ def register_route():
 @app.route('/game')
 def game():
     Games = load_games_from_db()
-    return render_template("game.html", title="Game",games=Games)
+    return render_template("game.html", title="Game",g=Games)
 
 @app.route('/game/<id>')
 def show_game(id):
@@ -84,7 +88,7 @@ def show_game(id):
 @app.route('/movie')
 def movie():
     Movies = load_movie_from_db()
-    return render_template("game.html", tittle="Moive",game=Movies)
+    return render_template("game.html", tittle="Moive",g=Movies)
 
 @app.route('/movie/<id>')
 def show_movie():
