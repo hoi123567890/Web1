@@ -13,8 +13,6 @@ CREATE TABLE Media (id INTEGER PRIMARY KEY AUTOINCREMENT,
 
 CREATE TABLE Review (id INTEGER PRIMARY KEY AUTOINCREMENT,
                     rating INTEGER NOT NULL CHECK (rating >= 0 AND rating <= 10),
-                    username TEXT NOT NULL,
-                    media_id INTEGER NOT NULL,
                     comment BLOB,
                     FOREIGN KEY (username) REFERENCES User(username),
                     FOREIGN KEY (media_id) REFERENCES Media(id));
