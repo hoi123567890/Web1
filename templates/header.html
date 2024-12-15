@@ -1,9 +1,18 @@
   <nav class="navbar shadow-sm fixed-top bg-body-black">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="{{url_for('home')}}">
-        <img src="/static/images/logo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
-        Games and Movies
-      </a>
+    <div style="margin-left:5%;">
+      <div style="display: flex;" class="container-fluid">
+        <a class="navbar-brand" href="{{url_for('home')}}">
+          <img src="/static/images/logo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
+          Games and Movies
+        </a>
+        <div style="float: right;">
+          <a href="{{url_for('home')}}">
+            <p>
+              Sign in/up
+            </p>
+          </a>
+        </div>
+      </div>
     </div>
   </nav>
   <div style="height: 100px"></div>

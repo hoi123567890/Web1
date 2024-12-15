@@ -5,9 +5,13 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+@app.route ('/log_in')
+def log_in():
+    return render_template("temp.html")
+
 @app.route ('/game')
 def game():
-    return render_template("game.html")
+    return render_template("game.html", tittle="Game",game=Games)
 
 @app.route ('/game/<id>')
 def show_game():
@@ -19,7 +23,7 @@ def show_game():
 
 @app.route ('/movie')
 def movie():
-    return render_template("movie.html")
+    return render_template("game.html", tittle="Moive",game=Moives)
 
 @app.route ('/movie/<id>')
 def show_moive():
@@ -27,7 +31,7 @@ def show_moive():
     if not movie:
         return "Not found", 404
     else:
-        return render_template("item.html", game=movie)
+        return render_template("item.html", game=movie[0])
 
 @app.route("/email/<id>" meathod=["post"])
 def email(id):
