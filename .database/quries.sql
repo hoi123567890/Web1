@@ -1,5 +1,5 @@
 --CREATE TABLE User(fristname TEXT NOT NULL,
-                  username TEXT NOT NULL,
+                  username TEXT NOT NULL UNIQUE,
                   lastname TEXT NOT NULL,
                   email TEXT NOT NULL,
                   password TEXT NOT NULL);
