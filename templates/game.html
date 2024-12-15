@@ -1,22 +1,21 @@
 <!doctype html>
     <html>
         <head>
-            <title>{{tittle}}</title>
-            <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+            <title>{{title}}</title>
         </head>
         <body>
             {% include 'header.html' %}
             <div class="border-bottom" sytle="margin-bottom: 16px;">
                 <a href="#"></a>
-                {% for g in game} 
-                    <h3> {{g['name']}}</h4>
+                {% for g in games %} 
+                    <h4> {{g['name']}}</h4>
                     {% if 'rating' in g %}
                     <div>
-                        <p>{{g['rating']}}/10</p>>
+                        <p>{{g['rating']}}/10</p>
                     </div>
                     {% endif %}
                      <h6>Summary</h6>
-                    <p>{{g['summary']}}</p>>
+                    <p>{{g['summary']}}</p>
                 {% endfor%}
             </div>
         </body>
