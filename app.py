@@ -75,10 +75,11 @@ def game():
 @app.route('/game/<id>')
 def show_game(id):
     game = load_media_from_db(id)
+    review = reveiw(id)
     if not game:
         return "Not found", 404
     else:
-        return render_template("item.html", game=game)
+        return render_template("item.html", game=game, review=review)
 
 @app.route('/movie')
 def movie():

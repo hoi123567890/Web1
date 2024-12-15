@@ -6,6 +6,12 @@ def GetDB():
     db.row_factory = sqlite3.Row
     return db
 
+def reveiw(id):
+    db = GetDB()
+    media = db.execute("SELECT * FROM Review WHERE media_id=?",(id,)).fetchall()
+    db.close()
+    return media
+
 def load_games_from_db():
     db = GetDB()
     indi_game = db.execute("SELECT * FROM media WHERE game=1").fetchall()

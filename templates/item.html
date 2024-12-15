@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <title>{{g['name']}}</title> 
+        <style>
+            body{
+                align-items: center;
+            }
+            p{
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        </style>
     </head>
     <body>
-        
+        <h1>{{game['name']}}</h1><br>
+        <br>
+        <p>{{game['rating']}}/10</p><br>
+        <h2>Summary</h3>
+        <p>{{game['summary']}}</p><br>
+        <br>
+        <br>
+        {% for g in review %}
+            <h4> {{g['username']}}</h3>
+            <p>{{g['rating']}}/10</p><br>
+            <p>{{g['comment']}}</p>   
+        {% endfor%}
     </body>
 </html>>
