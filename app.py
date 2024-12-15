@@ -1,4 +1,4 @@
-from flask import Flask, flash, render_template, request, jsonify, redirect, url_for
+from flask import Flask, flash, render_template, request, session, redirect, url_for
 import time
 from db import *
 
@@ -24,15 +24,16 @@ def email_route():
 @app.route('/login', methods=['GET', 'POST'])
 def login_route():
     email = request.args.get('email')
+    print(email)
+    print(f"Request method: {request.method}")
     if request.method == 'POST':
-        variable = request.form['password']
-        veri= pass_veri(email,variable)
-        print("1")
-        if veri == True:
-            print("hi")
-            return redirect(url_for('home'))
+        password = request.form['password']
+        veri= pass_veri(email,password)
+        if veri == False:
+            flash('Invalid password.', 'error')
         else:
-            flash('Invalid password.', 'error')       
+            session['username'] = veri
+            return redirect("/")    
     else:
         return render_template("password.html") 
 
